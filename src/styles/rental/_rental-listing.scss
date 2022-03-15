@@ -4,6 +4,9 @@
 	    font-weight: 700;
 	    margin-bottom: 20px;
 	}
+	.rental-detail-link{
+		&:hover{text-decoration: none;}
+	}
 	.bwm-card {
 	border: none;
 		.card-block {
@@ -13,7 +16,7 @@
 			        font-weight: 500;
 			        font-size: 12px;
 			        text-transform: uppercase;
-			        color: #16861a;
+			        /*color: #16861a;*/
 			      }
 			.card-title {
 			        font-size: 19px;
