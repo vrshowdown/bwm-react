@@ -9,8 +9,8 @@ export  class RentalList extends React.Component {
 		this.addRental = this.addRental.bind(this);
 	}
 	renderRentals(){
-		return this.state.rentals.map((rental)=>{
-			return (<RentalCard/>);
+		return this.state.rentals.map((rental, index)=>{
+			return (<RentalCard key={index} colNum ='col-md-3 col-xs-6'/>);
 		});
 	}
 	addRental(){
