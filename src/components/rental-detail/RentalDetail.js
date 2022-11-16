@@ -1,33 +1,52 @@
 import { connect } from 'react-redux';
 import * as actions from 'actions';
 import React from 'react';
+import { RentalDetailInfo } from './RentalDetailInfo';
  class RentalDetail extends React.Component {
-	
-	componentWillMount(){
-		const rentalId = this.props.match.params.id;
-		this.props.dispatch(actions.fetchRentalById(rentalId));
-	}
-	render(){
-		const rental = this.props.rental;
-		if(rental.id){
-			return(
-				<div>
-					<h1> {rental.title} </h1>
-					<h1> {rental.city} </h1>
-					<h1> {rental.description} </h1>
-					<h1> {rental.dailyRate} </h1>
-				</div>
-			);
-		}else{
-			return(
-			<h1>Loading...</h1>
-			);
-		}
-	}
+    componentWillMount(){
+        const rentalId = this.props.match.params.id;
+        this.props.dispatch(actions.fetchRentalById(rentalId));
+    }
+    render(){
+        const rental = this.props.rental;
+        if(rental._id){
+            return(
+             
+        
+
+<section id='rentalDetails'>
+  <div className='upper-section'>
+    <div className='row'>
+      <div className='col-md-6'>
+        <img src={rental.image} alt=''></img>
+      </div>
+      <div className='col-md-6'>
+        <img src={rental.image} alt=''></img>
+      </div>
+    </div>
+  </div>
+
+  <div className='details-section'>
+    <div className='row'>
+
+<div className='col-md-8'>
+	<RentalDetailInfo  rental = {rental} />
+</div>
+  
+  
+      <div className='col-md-4'> BOOKING</div>
+    </div>
+  </div>
+</section>
+    );
+        }else{
+            return(
+            <h1>Loading...</h1>
+            );
+        }
+    }
 }
 function mapStateToProps(state){
-	
-return {rental: state.rental.data}
-
+return {   rental: state.rental.data  }
 }
 export default connect(mapStateToProps)(RentalDetail)
