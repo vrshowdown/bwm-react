@@ -5,7 +5,7 @@ export class RentalMap extends React.Component {
 		const location = this.props.location;
 		return(
 		<MapWithGeocode
-			googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqB5oj_rA-YJ9AXc2fpTT1HuzwGdWh6X8&libraries=geometry,drawing,places"
+			googleMapURL={process.env.REACT_APP_GOOGLE_MAP_API}
 			loadingElement={<div style={{ height: `100%` }} />}
 			containerElement={<div style={{ height: `360px` }} />}
 			mapElement={<div style={{ height: `100%` }} />}
